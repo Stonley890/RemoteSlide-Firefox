@@ -102,7 +102,7 @@ app.controller("mainCtrl", function ($scope, $timeout) {
         }
     })
 
-    chrome.extension.onMessage.addListener(function (msg, sender, sendResponse) {
+    chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         console.log(msg)
         if (msg.action == 'controlUpdate') {
             $timeout(function () {
@@ -140,4 +140,3 @@ app.controller("mainCtrl", function ($scope, $timeout) {
     });
 
 });
-
